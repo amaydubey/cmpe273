@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Variables</title>
+</head>
+<body>
+	Tax Calculator<br><br>
+	<label for="annualTaxableSalary">Annual Taxable Salary: </label><input type="number" id="annualTaxableSalary"><br>
+	<label for="taxRate">Tax Rate: </label><input type="number" id="taxRate"><br>
+	<label for="investmentDeclaration">Investment Declaration: </label><input type="number" id="investmentDeclaration"><br>
+	<button onclick="getTaxSaved()">Get Tax Saved</button>
+	<script>
+		function getTaxSaved() {
+			var annualTaxableSalary = document.getElementById('annualTaxableSalary').value;
+			var taxRate = document.getElementById('taxRate').value;
+			var investmentDeclaration = document.getElementById('investmentDeclaration').value;
+			var actualTax = annualTaxableSalary * taxRate / 100;
+			var taxGiven = (annualTaxableSalary - investmentDeclaration) * taxRate / 100;
+			var taxSaved = actualTax - taxGiven;
+			alert("The tax saved is $" + taxSaved);
+		}
+	</script>
+</body>
+</html>

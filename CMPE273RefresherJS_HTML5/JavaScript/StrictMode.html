@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Strict Mode</title>
+</head>
+<h1>Strict Mode</h1>
+<button onclick="checkStrictMode()">Check Strict Mode</button>
+<body>
+	<script>
+		var a = 10;
+		function checkStrictMode() {
+			"use strict"
+			try
+			{
+				k=10;
+			}
+			catch(error)
+			{
+				alert(error);
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Events</title>
+</head>
+<body>
+Try to click the button!<br><br>
+	<button id="clickMe" onmouseover="moveButton()">Click Me!</button>
+	<script>
+		function moveButton(){
+			var marginleft = Math.random() * 1200;
+			var margintop = Math.random() * 500;
+			document.getElementById("clickMe").setAttribute("style", "margin: " + margintop + "px 0 0 "+ marginleft + "px");
+		}
+	</script>
+</body>
+</html>

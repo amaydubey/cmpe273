@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSON</title>
+</head>
+<body>
+	<ul>
+		<li><label for="name">Name:</label><input type="text" id="name"></li>
+		<li><label for="univ">University:</label><input type="text" id="univ"></li>
+		<li><label for="id">ID:</label><input type="text" id="id"></li>
+	</ul>
+	<div id="studentInfo"></div>
+	<button onclick="parseJSON()">Parse in JSON</button>
+	<script>
+		function parseJSON(){
+			var studentDetails = '{"student":[' +
+			'{"name":"'+ document.getElementById('name').value + '",' +
+			'"university":"' + document.getElementById('univ').value + '",' +
+			'"id":"'+ document.getElementById('id').value +'" }]}';
+			alert("JSON: " + studentDetails);
+			var studentObject = JSON.parse(studentDetails);
+			alert("Student Details:\nName: " + studentObject.student[0].name + "\nUniversity: " + studentObject.student[0].university + "\nID: " + studentObject.student[0].id);
+		}
+	</script>
+</body>
+</html>

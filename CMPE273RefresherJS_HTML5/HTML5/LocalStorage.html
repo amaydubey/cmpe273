@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Local Storage</title>
+</head>
+<body>
+	To Do List
+	<br>
+	<br>
+	<ul>
+		<li><label for="name">Name: </label><input type="text" id="name"></li>
+		<li><label for="desc">Description: </label><input type="text" id="desc"></li>
+		<li><label for="itemColor">Color: </label><input type="color" id="itemColor"></li>
+	</ul>
+	<button onClick="save()">Save</button>
+	<table id="itemList">
+	</table>
+	<script>
+		function save() {
+			if(localStorage.itemList == undefined){
+				localStorage.itemList = "<tr><th>Name</th><th>Description</th></tr>";
+			}
+			localStorage.itemList += '<tr style="background-color:'
+					+ document.getElementById('itemColor').value + '"><th>'
+					+ document.getElementById('name').value + '</th><th>'
+					+ document.getElementById('desc').value + '</th></tr>\n';
+			storeData();
+		}
+
+		function storeData() {
+			if (typeof (localStorage) !== "undefined") {
+				document.getElementById('itemList').innerHTML = localStorage.itemList;
+			} else {
+				alert("The browser you are using doesn't seem to have local storage!");
+			}
+		}
+	</script>
+</body>
+</html>

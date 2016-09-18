@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Regular Expressions</title>
+</head>
+<p>Email Id validation.</p>
+
+<label for="email">Email ID: </label><input type="text" id="email">
+<button onclick="validateEmail()">Validate</button>
+
+<script>
+function validateEmail() {
+    var email = document.getElementById('email').value;
+    var regex = /\S+@\S+\.\S+/;
+    if(regex.test(email)){
+    	alert("Email ID is valid!");
+    }
+    else{
+    	alert("Email ID is invalid!");
+    }
+}
+</script>
+</html>

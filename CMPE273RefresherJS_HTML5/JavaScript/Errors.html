@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Errors</title>
+</head>
+<body>
+	Errors
+	<br>
+	<br>
+	<label for="input">Enter a number.</label>
+	<input type="text" id="input"><br>
+	<button onclick="checkNumber()">Check</button><br>
+	<div id="error"></div>
+	<script>
+		function checkNumber() {
+			var input = document.getElementById('input').value;
+			try{
+				if(isNaN(input)){
+					throw "Not a number. Please enter a number.";
+				}
+				else{
+					alert("Great work! " + input + " is a number.")
+				}
+			}
+			catch(error){
+				document.getElementById('error').innerHTML = error;
+			}
+		}
+	</script>
+</body>
+</html>

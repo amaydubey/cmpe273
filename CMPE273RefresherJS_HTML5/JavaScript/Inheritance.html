@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Inheritance</title>
+</head>
+<body>
+	<label for="base">Base: </label><input type="number" id="base">
+	<label for="height">Height: </label><input type="number" id="height"><br>
+	<button onclick="getTriangle()">Triangle</button><br>
+	<div id="triangleDetails"></div><br>
+	<label for="side">Side: </label><input type="number" id="side"><br>
+	<button onclick="getSquare()">Square</button><br>
+	<div id="squareDetails"></div>
+	<script>
+		var shapePrototype = {
+				noOfSides : 0,
+				toString: function(){
+					return "The number of sides of this shape are " + this.noOfSides + ".";
+				}
+		}
+		
+		function createTriangle(){
+			var triangle = Object.create(shapePrototype);
+			triangle.noOfSides = 3;
+			triangle.getArea = function(base, height){
+				return base * height / 2;
+			}
+			return triangle;
+		}
+		
+		function getTriangle(){
+			var triangle = createTriangle();
+			var base = document.getElementById('base').value;
+			var height = document.getElementById('height').value;
+			document.getElementById('triangleDetails').innerHTML = triangle.toString() + " This triangle has an area of " + triangle.getArea(base, height) + ".";
+		}
+		
+		function createSquare(){
+			var square = Object.create(shapePrototype);
+			square.noOfSides = 4;
+			square.getArea = function(side){
+				return side*side;
+			}
+			return square;
+		}
+		
+		function getSquare(){
+			var square = createSquare();
+			var side = document.getElementById('side').value;
+			document.getElementById('squareDetails').innerHTML = square.toString() + " This square has an area of " + square.getArea(side) + ".";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Functions</title>
+</head>
+<body>
+Encoder/Decoder<br><br>
+	<label for="inputEncodeString">Enter string to be encoded.</label><input type="text" id="inputEncodeString">
+	<button onclick="callEncoder()">Encode</button>
+	<div id="encodedString"></div><br>
+	<label for="inputDecodeString">Enter string to be decoded.</label><input type="text" id="inputDecodeString">
+	<button onclick="callDecoder()">Decode</button>
+	<div id="decodedString"></div>
+	<script>
+		function encode(){
+			var inputEncodeString = document.getElementById('inputEncodeString').value.split('');
+			for (var i = 0; i < inputEncodeString.length; i++) {
+				var charASCIIValue = inputEncodeString[i].charCodeAt() - 10;
+				inputEncodeString[i] = String.fromCharCode(charASCIIValue);
+			}
+			return inputEncodeString.join("");
+		}
+		function decode(){
+			var inputDecodeString = document.getElementById('inputDecodeString').value.split('');
+			for (var i = 0; i < inputDecodeString.length; i++) {
+				var charASCIIValue = inputDecodeString[i].charCodeAt(0) + 10;
+				inputDecodeString[i] = String.fromCharCode(charASCIIValue);
+			}
+			return inputDecodeString.join("");
+		}
+		function callEncoder(){
+			var encodedString = encode();
+			document.getElementById('encodedString').innerHTML = encodedString;
+		}
+		function callDecoder(){
+			var decodedString = decode();
+			document.getElementById('decodedString').innerHTML = decodedString;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Conditions</title>
+</head>
+<body>
+	<button onclick="getRandom()">Get Random</button>
+	<script>
+		function getRandom(){
+			var x = Math.random()
+			if(x<0.25){
+				alert("1/4. Eat a sandwich!");
+			}
+			else if(x>=0.25 && x<0.5){
+				alert("2/4. Go to Sleep!");
+			}
+			else if(x>=0.5 && x<0.75){
+				alert("3/4. Read a book!");
+			}
+			else{
+				alert("4/4. Take a shower!");
+			}
+		}
+	</script>
+</body>
+</html>

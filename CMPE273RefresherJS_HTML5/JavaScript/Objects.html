@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Objects</title>
+</head>
+<body>
+	Organism Details
+	<br>
+	<br> 1. Human
+	<br> 2. Goldfish
+	<br> 3. Fruit Fly
+	<br>
+	<label for="organismId">Enter your choice</label>
+	<input type="number" id="organismId">
+	<br>
+	<button onclick="getOrganismDetails()">Get Organism Details</button>
+	<script>
+		var human = {
+			kingdom : "animalia",
+			vertebrates : true,
+			type : "mammalia",
+			nomenclatureName : "Homo Sapiens",
+			passAsString : function() {
+				var details = "Name: Human\nKingdom: " + this.kingdom
+						+ "\nIs a vertebrate: " + this.vertebrates + "\nType: "
+						+ this.type + "\nScientific Name: "
+						+ this.nomenclatureName;
+				return details;
+			}
+		}
+		var goldfish = {
+			kingdom : "animalia",
+			vertebrates : true,
+			type : 'pisces',
+			nomenclatureName : "Carassius auratus",
+			passAsString : function() {
+				var details = "Name: GoldFish\nKingdom: " + this.kingdom
+						+ "\nIs a vertebrate: " + this.vertebrates + "\nType: "
+						+ this.type + "\nScientific Name: "
+						+ this.nomenclatureName;
+				return details;
+			}
+		}
+		var fruitFly = {
+			kingdom : "animalia",
+			vertebrates : false,
+			type : "drosophilidae",
+			nomenclatureName : "Drosophila melanogaster",
+			passAsString : function() {
+				var details = "Name: Fruit Fly\nKingdom: " + this.kingdom
+						+ "\nIs a vertebrate: " + this.vertebrates + "\nType: "
+						+ this.type + "\nScientific Name: "
+						+ this.nomenclatureName;
+				return details;
+			}
+		}
+		function getOrganismDetails() {
+			var organisms = {};
+			organisms[1] = human;
+			organisms[2] = goldfish;
+			organisms[3] = fruitFly;
+			var id = document.getElementById('organismId').value;
+			alert("Here are the details: \n" + organisms[id].passAsString());
+		}
+	</script>
+</body>
+</html>

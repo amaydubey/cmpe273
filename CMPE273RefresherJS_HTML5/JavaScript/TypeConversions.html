@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Type Conversions</title>
+</head>
+<body>
+	<label for="input">Enter input</label>
+	<input id="input">
+	<br>
+	<button onclick="test()">Get Type</button>
+	<select id ="type">
+	<option value="boolean">Boolean</option>
+	<option value="number">Number</option>
+	</select>
+	<button onclick="convertType()">Convert Type</button>
+	<script>
+		var input;
+		function test() {
+			alert(typeof document.getElementById('input').value);
+		}
+
+		function convertType() {
+			var input = document.getElementById('input').value;
+			try {
+				if(document.getElementById('type').value == "boolean"){
+					var output = Boolean(input);
+					alert(output + " converted to " + typeof output);
+				}
+				else if(document.getElementById('type').value == "number"){
+					var output = Number(input);
+					if(isNaN(output)){
+						throw "Type Conversion not possible!";
+					}
+					alert(output + " converted to " + typeof output);
+				}
+			} catch (error) {
+				alert(error);
+			}
+		}
+	</script>
+</body>
+</html>

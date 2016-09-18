@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Input Type</title>
+</head>
+<body>
+	<form>
+		<table>
+			<tr>
+				<th><label for="studentId">Student ID: </label></th>
+				<th><input type="text" id="studentId" pattern="\d{9}" autofocus required></th>
+			</tr>
+			<tr>
+				<th><label for="name">Name: </label></th>
+				<th><input type="text" id="name" required></th>
+			</tr>
+			<tr>
+				<th><label for="emailId">Email: </label></th>
+				<th><input type="email" id="emailId" required></th>
+			</tr>
+			<tr>
+				<th><label for="dateOfBirth">Date of Birth: </label></th>
+				<th><input type="date" id="dateOfBirth"></th>
+			</tr>
+			<tr>
+				<th><label for="contactNo">Contact: </label></th>
+				<th><input type="tel" id="contactNo" pattern="\d{3}[\-]\d{3}[\-]\d{4}"></th>
+			</tr>
+			<tr>
+				<th><label for="creditCardNo">Credit Card Number: </label></th>
+				<th><input type="text" id="creditCardNo" pattern="[0-9]{13,16}"></th>
+			</tr>
+			<tr>
+				<th><label for="pinCode">Postal Code: </label></th>
+				<th><input type="text" id="pinCode" pattern="(\d{5}([\-]\d{4})?)"></th>
+			</tr>
+		</table>
+		<input type="submit" value="Submit">
+	</form>
+	<script>
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Arrays</title>
+</head>
+<body>
+	<label for="inputTemp">Enter Minimum Temperature.</label><input type="text" id="inputTemp"><br>
+	<button onclick="pushIntoArray()">Set</button><br>
+	Temperature Records:<br><div id="temperatures"></div>
+	<button onclick="getStats()">Get Statistics</button>
+	<div id="results"></div>
+	<script>
+	var temperatureArray = [];
+	function pushIntoArray(){
+		temperatureArray.push(document.getElementById('inputTemp').value);
+		document.getElementById('temperatures').innerHTML = temperatureArray;
+		document.getElementById('inputTemp').value = "";
+	}
+	function getStats(){
+		temperatureArray.sort();
+		document.getElementById("results").innerHTML = "This week, the maximum temperature recorded was " + temperatureArray[temperatureArray.length-1] + " and the minimum temperature was " + temperatureArray[0] + ".";
+	}
+	</script>
+</body>
+</html>
